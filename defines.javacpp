@@ -1,0 +1,40 @@
+#define MAP_IA_IA(COLLECTION, FUNCBODY) \
+  MapTwoPrimitives.mapIntArrayToIntArray(COLLECTION, new MapTwoPrimitives() { \
+    public int mapIntToInt(final int _) \
+      FUNCBODY \
+  })
+#define MAP_IA_OA(COLLECTION, T, FUNCBODY) \
+  new MapOnePrimitive<T>().mapIntArrayToTArray(COLLECTION, T.class, \
+      new MapOnePrimitive<T>() { \
+    public T mapIntToT(final int _) \
+      FUNCBODY \
+  })
+#define MAP_OA_OA(COLLECTION, T, U, FUNCBODY) \
+  new MapNoPrimitives<T,U>().mapTArrayToUArray(COLLECTION, T.class, U.class, \
+      new MapNoPrimitives<T,U>() { \
+    public U mapTToU(final T _) \
+      FUNCBODY \
+  })
+#define FOREACH_IA(COLLECTION, FUNCBODY) \
+  ForeachPrimitive.foreachIntArray(COLLECTION, new ForeachPrimitive() { \
+    public void handleInt(final int _) \
+      FUNCBODY \
+  })
+#define FOREACH_OA(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachObjectArray(COLLECTION, \
+      new ForeachObject<T>() { \
+    public void handleObject(final T _) \
+      FUNCBODY \
+  })
+#define FOREACH_OI(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachObjectIterable(COLLECTION, \
+      new ForeachObject<T>() { \
+    public void handleObject(final T _) \
+      FUNCBODY \
+  })
+#define FOREACH_OE(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachObjectEnumeration(COLLECTION, \
+      new ForeachObject<T>() { \
+    public void handleObject(final T _) \
+      FUNCBODY \
+  })

@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Vector;
+
+public final class FunctionalDemo {  
+  public static void main(final String[] args) {  
+    int[] list = new int[] { 1, 2, 3};
+    int[] list2 = MAP_IA_IA(list, {
+      return _ + 42;
+    });
+    String[] strings = MAP_IA_OA(list, String, {
+      return _ + "42";
+    });
+    Integer[] ints = MAP_OA_OA(strings, String, Integer, {
+      return Integer.parseInt(_);
+    });
+    FOREACH_OA(ints, Integer, {
+      System.out.println("here2" + _);
+    });
+    ArrayList<Integer> intList = new ArrayList<Integer>();
+    intList.add(3);
+    intList.add(5);
+    intList.add(7);
+    FOREACH_OI(intList, Integer, {
+      System.out.println("here2" + _);
+    });
+    FOREACH_IA(list, {
+      System.out.println("here" + _);
+    });
+
+    Vector<Integer> v = new Vector<Integer>();
+    v.add(3);
+    v.add(7);
+    FOREACH_OE(v.elements(), Integer, {
+      System.out.println("here5 " + _);
+    });
+  }  
+}  
+
