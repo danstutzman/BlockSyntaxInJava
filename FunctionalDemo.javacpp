@@ -24,10 +24,8 @@ public final class FunctionalDemo {
     FOREACH_AO(ints, Integer, {
       System.out.println("here2" + _);
     });
-    ArrayList<Integer> intList = new ArrayList<Integer>();
-    intList.add(3);
-    intList.add(5);
-    intList.add(7);
+
+    List<Integer> intList = Arrays.asList(new Integer[] { 3, 5, 7 });
     FOREACH_IO(intList, Integer, {
       System.out.println("here2" + _);
     });
