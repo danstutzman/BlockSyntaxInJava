@@ -32,11 +32,17 @@ public final class FunctionalDemo {
     FOREACH_AI(list, {
       System.out.println("here" + _);
     });
+    vectorExample();
+  }
 
-    Vector<Integer> v = new Vector<Integer>();
-    v.add(3);
-    v.add(7);
-    FOREACH_EO(v.elements(), Integer, {
+  // Example of old-school code before generics
+  @SuppressWarnings({"unchecked"})
+  private static void vectorExample() {
+    Vector vector = new Vector();
+    vector.add(new Integer(3));
+    vector.add(new Integer(5));
+    vector.add(new Integer(7));
+    FOREACH_EO(vector.elements(), Integer, {
       System.out.println("here5 " + _);
     });
   }  
