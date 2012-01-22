@@ -3,13 +3,13 @@ import java.util.Enumeration;
 import java.util.Iterator;
 
 public class ForeachObject<T> {
-  public void foreachObjectArray(T[] before, ForeachObject<T> mapper) {
+  public void foreachOfArrayOfObjects(T[] before, ForeachObject<T> mapper) {
     for (int i = 0; i < before.length; i++) {
       mapper.handleObject(before[i]);
     }
   }
 
-  public void foreachObjectIterable(
+  public void foreachOfIterableOfObjects(
       Iterable<T> iterable, ForeachObject<T> mapper) {
     Iterator<T> iterator = iterable.iterator();
     while (iterator.hasNext()) {
@@ -18,7 +18,7 @@ public class ForeachObject<T> {
     }
   }
 
-  public void foreachObjectEnumeration(
+  public void foreachOfEnumerationOfObjects(
       Enumeration<T> enumeration, ForeachObject<T> mapper) {
     while (enumeration.hasMoreElements()) {
       T next = enumeration.nextElement();

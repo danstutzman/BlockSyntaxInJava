@@ -1,5 +1,6 @@
 public class ForeachPrimitive {
-  public static void foreachIntArray(int[] before, ForeachPrimitive mapper) {
+  public static void foreachOfArrayOfInts(int[] before,
+      ForeachPrimitive mapper) {
     for (int i = 0; i < before.length; i++) {
       mapper.handleInt(before[i]);
     }

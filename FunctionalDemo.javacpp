@@ -8,37 +8,37 @@ public final class FunctionalDemo {
     List<Integer> positiveInts = Arrays.asList(new Integer[] { 1, 2, 3 });
     System.out.println(positiveInts);
     List<Integer> negativeInts =
-      MAP_OL_OL(positiveInts, Integer, Integer, { return -_; });
+      MAP_LO_LO(positiveInts, Integer, Integer, { return -_; });
     System.out.println(negativeInts);
 
     int[] list = new int[] { 1, 2, 3};
-    int[] list2 = MAP_IA_IA(list, {
+    int[] list2 = MAP_AI_AI(list, {
       return _ + 42;
     });
-    String[] strings = MAP_IA_OA(list, String, {
+    String[] strings = MAP_AI_AO(list, String, {
       return _ + "42";
     });
-    Integer[] ints = MAP_OA_OA(strings, String, Integer, {
+    Integer[] ints = MAP_AO_AO(strings, String, Integer, {
       return Integer.parseInt(_);
     });
-    FOREACH_OA(ints, Integer, {
+    FOREACH_AO(ints, Integer, {
       System.out.println("here2" + _);
     });
     ArrayList<Integer> intList = new ArrayList<Integer>();
     intList.add(3);
     intList.add(5);
     intList.add(7);
-    FOREACH_OI(intList, Integer, {
+    FOREACH_IO(intList, Integer, {
       System.out.println("here2" + _);
     });
-    FOREACH_IA(list, {
+    FOREACH_AI(list, {
       System.out.println("here" + _);
     });
 
     Vector<Integer> v = new Vector<Integer>();
     v.add(3);
     v.add(7);
-    FOREACH_OE(v.elements(), Integer, {
+    FOREACH_EO(v.elements(), Integer, {
       System.out.println("here5 " + _);
     });
   }  

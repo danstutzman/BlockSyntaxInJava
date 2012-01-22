@@ -2,7 +2,7 @@ import java.lang.reflect.Array;
 
 public class MapOnePrimitive<T> {
   @SuppressWarnings({"unchecked"})
-  public T[] mapIntArrayToTArray(
+  public T[] mapArrayOfIntsToArrayOfTs(
       int[] before, Class<T> clazz, MapOnePrimitive<T> mapper) {
     T[] after = (T[])Array.newInstance(clazz, before.length);
     for (int i = 0; i < before.length; i++) {

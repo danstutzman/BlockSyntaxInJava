@@ -1,46 +1,47 @@
-#define MAP_IA_IA(COLLECTION, FUNCBODY) \
-  MapTwoPrimitives.mapIntArrayToIntArray(COLLECTION, new MapTwoPrimitives() { \
+#define MAP_AI_AI(COLLECTION, FUNCBODY) \
+  MapTwoPrimitives.mapArrayOfIntsToArrayOfInts(COLLECTION, \
+      new MapTwoPrimitives() { \
     public int mapIntToInt(final int _) \
       FUNCBODY \
   })
-#define MAP_IA_OA(COLLECTION, T, FUNCBODY) \
-  new MapOnePrimitive<T>().mapIntArrayToTArray(COLLECTION, T.class, \
+#define MAP_AI_AO(COLLECTION, T, FUNCBODY) \
+  new MapOnePrimitive<T>().mapArrayOfIntsToArrayOfTs(COLLECTION, T.class, \
       new MapOnePrimitive<T>() { \
     public T mapIntToT(final int _) \
       FUNCBODY \
   })
-#define MAP_OA_OA(COLLECTION, T, U, FUNCBODY) \
-  new MapNoPrimitives<T,U>().mapTArrayToUArray(COLLECTION, T.class, U.class, \
-      new MapNoPrimitives<T,U>() { \
+#define MAP_AO_AO(COLLECTION, T, U, FUNCBODY) \
+  new MapNoPrimitives<T,U>().mapArrayOfTsToArrayOfUs(COLLECTION, T.class, \
+      U.class, new MapNoPrimitives<T,U>() { \
     public U mapTToU(final T _) \
       FUNCBODY \
   })
-#define MAP_OL_OL(COLLECTION, T, U, FUNCBODY) \
-  new MapNoPrimitives<T,U>().mapTListToUList(COLLECTION, \
+#define MAP_LO_LO(COLLECTION, T, U, FUNCBODY) \
+  new MapNoPrimitives<T,U>().mapListOfTsToListOfUs(COLLECTION, \
       new MapNoPrimitives<T,U>() { \
     public U mapTToU(final T _) \
       FUNCBODY \
   })
   
-#define FOREACH_IA(COLLECTION, FUNCBODY) \
-  ForeachPrimitive.foreachIntArray(COLLECTION, new ForeachPrimitive() { \
+#define FOREACH_AI(COLLECTION, FUNCBODY) \
+  ForeachPrimitive.foreachOfArrayOfInts(COLLECTION, new ForeachPrimitive() { \
     public void handleInt(final int _) \
       FUNCBODY \
   })
-#define FOREACH_OA(COLLECTION, T, FUNCBODY) \
-  new ForeachObject<T>().foreachObjectArray(COLLECTION, \
+#define FOREACH_AO(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachOfArrayOfObjects(COLLECTION, \
       new ForeachObject<T>() { \
     public void handleObject(final T _) \
       FUNCBODY \
   })
-#define FOREACH_OI(COLLECTION, T, FUNCBODY) \
-  new ForeachObject<T>().foreachObjectIterable(COLLECTION, \
+#define FOREACH_IO(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachOfIterableOfObjects(COLLECTION, \
       new ForeachObject<T>() { \
     public void handleObject(final T _) \
       FUNCBODY \
   })
-#define FOREACH_OE(COLLECTION, T, FUNCBODY) \
-  new ForeachObject<T>().foreachObjectEnumeration(COLLECTION, \
+#define FOREACH_EO(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachOfEnumerationOfObjects(COLLECTION, \
       new ForeachObject<T>() { \
     public void handleObject(final T _) \
       FUNCBODY \

@@ -12,15 +12,15 @@ The BlockSyntaxInJava offers some C-preprocessor macros to reduce the amount
 of code that's needed:
 
 List<Integer> ints = Arrays.asList(new Integer[] { 1, 2, 3 });
-List<Integer> negativeInts = MAP_OL_OL(ints, Integer, Integer, { return -_; });
+List<Integer> negativeInts = MAP_LO_LO(ints, Integer, Integer, { return -_; });
 
-The name of the macro MAP_OL_OL can be read as:
+The name of the macro MAP_LO_LO can be read as:
  1. "Map..."
- 2. "...from an Object List..."
- 3. "...to an Object List."
+ 2. "...from a List of objects..."
+ 3. "...to a List of objects."
 
 The macro MAP_OC_OC takes four parameters:
- 1. the Object Collection (a List in this case) to read as input
- 2. the class of the input Objects
- 3. the class of the output Objects
+ 1. the List of objects to read as input
+ 2. the class of the input objects
+ 3. the class of the output objects
  4. the contents of the anonymous closure, ending with a return statement.

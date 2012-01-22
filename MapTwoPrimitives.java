@@ -1,5 +1,5 @@
 public class MapTwoPrimitives {
-  public static int[] mapIntArrayToIntArray(
+  public static int[] mapArrayOfIntsToArrayOfInts(
       int[] before, MapTwoPrimitives mapper) {
     int[] after = new int[before.length];
     for (int i = 0; i < before.length; i++) {
