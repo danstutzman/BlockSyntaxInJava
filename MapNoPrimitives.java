@@ -1,4 +1,6 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapNoPrimitives<T,U> {
   @SuppressWarnings({"unchecked"})
@@ -7,6 +9,14 @@ public class MapNoPrimitives<T,U> {
     U[] after = (U[])Array.newInstance(clazzU, before.length);
     for (int i = 0; i < before.length; i++) {
       after[i] = mapper.mapTToU(before[i]);
+    }
+    return after;
+  }
+
+  public List<U> mapTListToUList(List<T> before, MapNoPrimitives<T,U> mapper) {
+    List<U> after = new ArrayList<U>(before.size());
+    for (T eachElement : before) {
+      after.add(mapper.mapTToU(eachElement));
     }
     return after;
   }

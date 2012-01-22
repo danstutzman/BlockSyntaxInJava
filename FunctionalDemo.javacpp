@@ -1,8 +1,16 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
 
 public final class FunctionalDemo {  
   public static void main(final String[] args) {  
+    List<Integer> positiveInts = Arrays.asList(new Integer[] { 1, 2, 3 });
+    System.out.println(positiveInts);
+    List<Integer> negativeInts =
+      MAP_OL_OL(positiveInts, Integer, Integer, { return -_; });
+    System.out.println(negativeInts);
+
     int[] list = new int[] { 1, 2, 3};
     int[] list2 = MAP_IA_IA(list, {
       return _ + 42;

@@ -15,6 +15,13 @@
     public U mapTToU(final T _) \
       FUNCBODY \
   })
+#define MAP_OL_OL(COLLECTION, T, U, FUNCBODY) \
+  new MapNoPrimitives<T,U>().mapTListToUList(COLLECTION, \
+      new MapNoPrimitives<T,U>() { \
+    public U mapTToU(final T _) \
+      FUNCBODY \
+  })
+  
 #define FOREACH_IA(COLLECTION, FUNCBODY) \
   ForeachPrimitive.foreachIntArray(COLLECTION, new ForeachPrimitive() { \
     public void handleInt(final int _) \
