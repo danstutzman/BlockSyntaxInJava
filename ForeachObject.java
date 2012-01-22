@@ -1,11 +1,19 @@
 import java.lang.Iterable;
 import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.List;
 
 public class ForeachObject<T> {
   public void foreachOfArrayOfObjects(T[] before, ForeachObject<T> mapper) {
     for (int i = 0; i < before.length; i++) {
       mapper.handleObject(before[i]);
+    }
+  }
+
+  public void foreachOfListOfObjects(
+      List<T> before, ForeachObject<T> mapper) {
+    for (T eachElement : before) {
+      mapper.handleObject(eachElement);
     }
   }
 

@@ -26,8 +26,11 @@ public final class FunctionalDemo {
     });
 
     List<Integer> intList = Arrays.asList(new Integer[] { 3, 5, 7 });
-    FOREACH_IO(intList, Integer, {
+    FOREACH_LO(intList, Integer, {
       System.out.println("here2" + _);
+    });
+    FOREACH_IO(intList, Integer, {
+      System.out.println("here3" + _);
     });
     FOREACH_AI(list, {
       System.out.println("here" + _);
