@@ -1,0 +1,23 @@
+#define FOREACH_AI(COLLECTION, FUNCBODY) \
+  ForeachPrimitive.foreachOfArrayOfInts(COLLECTION, new ForeachPrimitive() { \
+    public void handleInt(final int _) \
+      FUNCBODY \
+  })
+#define FOREACH_AO(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachOfArrayOfObjects(COLLECTION, \
+      new ForeachObject<T>() { \
+    public void handleObject(final T _) \
+      FUNCBODY \
+  })
+#define FOREACH_IO(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachOfIterableOfObjects(COLLECTION, \
+      new ForeachObject<T>() { \
+    public void handleObject(final T _) \
+      FUNCBODY \
+  })
+#define FOREACH_EO(COLLECTION, T, FUNCBODY) \
+  new ForeachObject<T>().foreachOfEnumerationOfObjects(COLLECTION, \
+      new ForeachObject<T>() { \
+    public void handleObject(final T _) \
+      FUNCBODY \
+  })
